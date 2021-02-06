@@ -32,6 +32,7 @@ public class Game : MonoBehaviour
         foreach (var spawnPoint in spawnPoints)
 		{
 			GameObject cubePoint = Instantiate(templateObjective);
+            cubePoint.transform.parent = spawnPoint.transform.parent;
 			cubePoint.transform.position = spawnPoint.position;
 			cubePoint.GetComponent<Objective>().point = Random.Range(1, 1000);
 			cubePoint.GetComponent<Objective>().gm = this;
